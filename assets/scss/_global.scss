@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-montserrat: "Montserrat", sans-serif;
+
+// Colors
+$color-light: #FFFFFF;
+$color-dark: #000000;
+$color-grey-dark-1: #666666;
+$color-grey-light-2: #F1F1F1;
+$color-accent-1: #8BB841;
+$color-accent-3: #C80000;
+$color-gradient: linear-gradient(205.2deg, #8BB93A 12.42%, #6D9B1F 87.58%);
+// Colors end
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}
