@@ -236,4 +236,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
             list.onmousemove = () => activeCard(listID);
         })
     }
+
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach((item) => {
+        const accBtn = item.querySelector('.accordion-btn');
+        const accBody = item.querySelector('.accordion-body');
+
+        accBtn.addEventListener('click', (event) => {
+            accBody.style.maxHeight = accBody.style.maxHeight ? null : accBody.scrollHeight + 'px';
+            if (event.target.closest('.equipment-body__list')) {
+                setTimeout(() => {
+                    document.querySelector('.equipment-body__list-wrap').style.maxHeight = document.querySelector('.equipment-body__list-wrap').scrollHeight + 'px';
+                }, 300);
+            }
+        });
+    });
 });

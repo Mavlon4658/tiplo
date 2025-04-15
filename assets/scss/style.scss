@@ -3056,6 +3056,193 @@ button, input, textarea, li, div {
 }
 // Comfort end
 
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    will-change: max-height;
+}
+
+// Equipment
+.equipment {
+    background: $color-grey-light-2;
+    padding: 64px 0;
+
+    &-head {
+        margin: 48px 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 32px;
+
+            b {
+                font-weight: bold;
+                color: $color-accent-1;
+            }
+        }
+    }
+
+
+    &-body {
+        background: $color-light;
+        border-radius: 12px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+        @include media(992) {
+            width: calc(100% + 48px);
+            margin-left: -24px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 48px;
+            cursor: pointer;
+            user-select: none;
+
+            @include media(1200) {
+                padding: 24px;
+            }
+
+            .logo {
+                box-shadow: 4px 4px 0 rgba(0, 0, 0, 15%);
+            }
+
+            img, svg {
+                flex-shrink: 0;
+            }
+
+            div {
+                width: 100%;
+            }
+    
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 48px;
+                font-weight: bold;
+                color: $color-accent-1;
+
+                @include media(1200) {
+                    font-size: 32px;
+                    margin-bottom: 12px;
+
+                    img {
+                        height: 22px;
+                    }
+                }
+            }
+    
+            p {
+                font-size: 24px;
+
+                @include media(1200) {
+                    font-size: 20px;
+
+                    img {
+                        height: 17px;
+                    }
+                }
+                
+                span {
+                    display: inline;
+                    padding-right: 10px;
+                }
+    
+                img {
+                    display: inline;
+                }
+            }
+        }
+
+        &__list {
+            padding: 0 40px 40px;
+
+            @include media(1200) {
+                padding: 0 24px 24px;
+            }
+
+            p {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+
+            .accordion {
+                border-radius: 8px;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+                
+                &-wrap {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    align-items: flex-start;
+                    gap: 24px;
+
+                    @include media(1200) {
+                        grid-template-columns: repeat(1, minmax(0, 1fr));
+                    }
+                }
+                
+                &-btn {
+                    padding: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 24px;
+                    cursor: pointer;
+                    user-select: none;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        font-size: 24px;
+                        line-height: 150%;
+                    }
+                }
+
+                &-body ul {
+                    padding: 0 24px 24px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    list-style-type: disc;
+                    margin-left: 16px;
+
+                    li {
+                        font-size: 18px;
+
+                        &::marker {
+                            color: $color-accent-1;
+                        }
+                    }
+                }
+            }
+
+            h4 {
+                font-size: 20px;
+                margin-top: 48px;
+                color: $color-grey-light-1;
+            }
+        }
+    }
+}
+// Equipment end
+
 // Trusses
 .trusses {
     padding: 80px 0 507px;
