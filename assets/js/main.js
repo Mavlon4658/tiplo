@@ -252,4 +252,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
     });
+
+    const equipmentTabBtn = document.querySelectorAll('.equipment-foot .tab-head li');
+    const equipmentTabItem = document.querySelectorAll('.equipment-foot .tab-item');
+
+    if (equipmentTabBtn.length) {
+        equipmentTabBtn.forEach((btn, btnID) => {
+            btn.onclick = () => {
+                equipmentTabItem.forEach((el, elID) => {
+                    if (elID == btnID) {
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+                equipmentTabBtn.forEach((el, elID) => {
+                    if (elID == btnID) {
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+            }
+        })
+    }
 });
