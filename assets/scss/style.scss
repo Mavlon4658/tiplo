@@ -4568,3 +4568,20 @@ button, input, textarea, li, div {
     }
 }
 // Cost end
+
+.scroll-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 4;
+    background: $color-accent-1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+    @include media(700) {
+        bottom: 12px;
+        right: 12px;
+    }
+}

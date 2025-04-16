@@ -287,4 +287,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
             type: "progressbar",
         },
     })
+
+    const scrollBtn = document.querySelector('.scroll-btn');
+    if (scrollBtn) {
+        scrollBtn.onclick = () => {
+            window.scrollTo(0, 0);
+        }
+    }
 });

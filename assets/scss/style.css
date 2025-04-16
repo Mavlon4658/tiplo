@@ -4427,4 +4427,22 @@ button, input, textarea, li, div {
     padding: 11px 23px;
     font-size: 20px;
   }
+}
+
+.scroll-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 4;
+  background: #8BB841;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 700px) {
+  .scroll-btn {
+    bottom: 12px;
+    right: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */
