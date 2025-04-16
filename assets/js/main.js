@@ -160,6 +160,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             const projectParentSwp = new Swiper(el.querySelector('.parent-swp .swiper'), {
                 slidesPerView: 1,
                 spaceBetween: 0,
+                speed: 800,
+                spaceBetween: 24,
                 thumbs: {
                     swiper: projectChildSwp,
                 },
@@ -276,4 +278,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         })
     }
+
+    const scheduleSwp = new Swiper('.schedule .swiper', {
+        slidesPerView: 'auto',
+        freeMode: true,
+        pagination: {
+            el: ".schedule .swp-pagination",
+            type: "progressbar",
+        },
+    })
 });
