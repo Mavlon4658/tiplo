@@ -15,6 +15,14 @@ button, input, textarea, li, div {
     line-height: 150%;
 }
 
+@mixin textHover() {
+    transition: .3s ease-in-out all;
+
+    &:hover {
+        color: $color-accent-1;
+    }
+}
+
 .btn {
     &-light {
         &-outline {
@@ -251,6 +259,11 @@ button, input, textarea, li, div {
 .header {
     background: rgba(102, 102, 102, 0.95);
     color: $color-light;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
 
     &-container {
         display: flex;
@@ -265,6 +278,10 @@ button, input, textarea, li, div {
     }
 
     &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         img {
             @include media(1200) {
                 height: 26px;
@@ -294,6 +311,39 @@ button, input, textarea, li, div {
         @include media(992) {
             display: none;
         }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            width: 32px;
+            gap: 6px;
+
+            span {
+                width: 100%;
+                height: 2px;
+                background: $color-light;
+                transition: .3s ease-in-out all;
+            }
+
+            &:hover {
+                span {
+                    background: $color-accent-1;
+
+                    &:nth-child(1) {
+                        transform: translateY(-5px);
+                    }
+
+                    &:nth-child(3) {
+                        transform: translateY(5px);
+                    }
+                }
+            }
+        }
+
+        span {
+            @include textHover();
+        }
     }
 
     &-navs {
@@ -312,6 +362,7 @@ button, input, textarea, li, div {
         a {
             font-size: 16px;
             line-height: 150%;
+            @include textHover();
         }
     }
 
@@ -323,6 +374,7 @@ button, input, textarea, li, div {
         a {
             font-size: 16px;
             line-height: 150%;
+            @include textHover();
 
             @include media(992) {
                 font-size: 20px;
@@ -342,6 +394,30 @@ button, input, textarea, li, div {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                }
+            }
+
+            li {
+                @include media(1200) {
+                    &:nth-child(4) {
+                        display: none;
+                    }
+                }
+            }
+            
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg path {
+                    transition: .3s ease-in-out all;
+                }
+
+                &:hover {
+                    svg path {
+                        fill: $color-accent-1;
+                    }
                 }
             }
         }
@@ -366,8 +442,11 @@ button, input, textarea, li, div {
 
 // Nav
 .nav {
-    position: relative;
-    z-index: 2;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
 
     &-block {
         position: absolute;
@@ -506,6 +585,7 @@ button, input, textarea, li, div {
 .home {
     position: relative;
     z-index: 1;
+    margin-top: 56px;
 
     @include media(1200) {
         padding-top: 68px;
@@ -1089,6 +1169,10 @@ button, input, textarea, li, div {
         flex-direction: column;
         gap: 16px;
 
+        &:hover p {
+            text-decoration: underline;
+        }
+
         &-head {
             width: 100%;
             position: relative;
@@ -1105,6 +1189,14 @@ button, input, textarea, li, div {
                 display: flex;
                 align-items: center;
                 padding-left: 21px;
+
+                &:active {
+                    background: $color-accent-1;
+
+                    svg path {
+                        fill: $color-light;
+                    }
+                }
             }
             
             .main-img {
@@ -1153,6 +1245,10 @@ button, input, textarea, li, div {
             font-size: 16px;
             line-height: 150%;
             flex-wrap: wrap;
+
+            a, span {
+                @include textHover();
+            }
         }
     }
 
@@ -1202,6 +1298,11 @@ button, input, textarea, li, div {
         overflow: hidden;
         position: relative;
         z-index: 1;
+        transition: .2s ease-in-out all;
+
+        &:hover {
+            background: $color-dark;
+        }
 
         @include media(1200) {
             height: 312px;
@@ -1237,6 +1338,14 @@ button, input, textarea, li, div {
             display: flex;
             align-items: center;
             padding-left: 27px;
+
+            &:active {
+                background: $color-light;
+
+                svg path {
+                    fill: $color-grey-dark-1;
+                }
+            }
 
             @include media (992) {
                 width: 48px;
@@ -1410,6 +1519,7 @@ button, input, textarea, li, div {
                 font-weight: bold;
                 line-height: 150%;
                 margin-bottom: 24px;
+                @include textHover();
 
                 @include media(992) {
                     font-size: 28px;
@@ -1421,6 +1531,7 @@ button, input, textarea, li, div {
                 font-size: 16px;
                 line-height: 150%;
                 margin-bottom: 48px;
+                @include textHover();
 
                 @include media(992) {
                     margin-bottom: 24px;
@@ -1463,6 +1574,16 @@ button, input, textarea, li, div {
                 display: flex;
                 align-items: center;
                 gap: 16px;
+            }
+
+            a {
+                svg path {
+                    transition: .3s ease-in-out all;
+                }
+
+                &:hover svg path {
+                    fill: $color-accent-1;
+                }
             }
         }
     }
@@ -1510,6 +1631,7 @@ button, input, textarea, li, div {
             a {
                 font-size: 16px;
                 line-height: 150%;
+                @include textHover();
 
                 @include media(992) {
                     font-size: 20px;
