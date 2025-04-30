@@ -15,14 +15,6 @@ button, input, textarea, li, div {
     line-height: 150%;
 }
 
-@mixin textHover() {
-    transition: .3s ease-in-out all;
-
-    &:hover {
-        color: $color-accent-1;
-    }
-}
-
 .btn {
     &-light {
         &-outline {
@@ -3674,6 +3666,17 @@ button, input, textarea, li, div {
         padding: 24px 0 202px;
     }
 
+    &-wrap {
+        @include media(992) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @include media(700) {
+            flex-direction: column;
+        }
+    }
+
     &-bg {
         &__1 {
             position: absolute;
@@ -4585,3 +4588,698 @@ button, input, textarea, li, div {
         right: 12px;
     }
 }
+
+// House
+.house {
+    padding: 210px 0 64px;
+
+    @include media(1200) {
+        padding: 174px 0 24px;
+    }
+
+    @include media(992) {
+        padding: 171px 0 24px;
+    }
+
+    h3 {
+        font-size: 48px;
+        font-weight: bold;
+        color: $color-accent-1;
+        margin-bottom: 12px;
+
+        @include media(1200) {
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        @include media(992) {
+            margin: 0 0 12px;
+            font-size: 24px;
+        }
+    }
+
+    h4 {
+        font-size: 24px;
+        color: $color-grey-light-1;
+        margin-bottom: 48px;
+
+        @include media(1200) {
+            margin-bottom: 24px;
+        }
+
+        @include media(992) {
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+    }
+
+    &-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 48px;
+
+        @include media(1200) {
+            margin-bottom: 24px;
+        }
+
+        @include media(992) {
+            gap: 48px;
+        }
+
+        @include media(700) {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .line {
+            width: 100%;
+            height: 4px;
+            background: $color-grey-light-2;
+            margin-top: 20px;
+            position: relative;
+
+            @include media(992) {
+                display: none;
+            }
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 70%;
+                background: $color-accent-1;
+            }
+        }
+
+        &__left {
+            flex-shrink: 0;
+
+            @include media(992) {
+                width: calc(50% - 24px);
+            }
+
+            @include media(700) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &__right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            flex-shrink: 0;
+
+            @include media(992) {
+                width: calc(50% - 24px);
+            }
+
+            @include media(700) {
+                width: 100%;
+                text-align: center;
+                align-items: center;
+            }
+        }
+
+        .btn-green {
+            font-size: 16px;
+            padding: 8px 24px;
+            margin-bottom: 12px;
+
+            @include media(992) {
+                width: 100%;
+            }
+
+            &.disabled {
+                color: $color-grey-dark-1;
+                background: $color-grey-light-2;
+                border: 1px solid $color-grey-light-2;
+                opacity: 1;
+                padding: 8px 37.5px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .swp {
+        &-parent {
+            position: relative;
+            margin-bottom: 24px;
+
+            .btn-swp {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+
+                @include media(700) {
+                    display: none;
+                }
+
+                &__prev {
+                    left: 48px;
+
+                    @include media(992) {
+                        left: 24px;
+                    }
+                }
+
+                &__next {
+                    right: 48px;
+
+                    @include media(992) {
+                        right: 24px;
+                    }
+                }
+            }
+
+            .swiper {
+                &-slide {
+                    height: 720px;
+
+                    @include media(1200) {
+                        height: 637px;
+                    }
+
+                    @include media(992) {
+                        height: 391px;
+                    }
+
+                    @include media(700) {
+                        height: 176px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        &-child {
+            .swiper {
+                @include media(1200) {
+                    overflow: visible;
+                }
+
+                &-slide {
+                    border-radius: 8px;
+                    height: 78px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    user-select: none;
+
+                    @include media(1200) {
+                        width: 139px;
+                    }
+
+                    @include media(992) {
+                        height: 88px;
+                        width: auto;
+                        border-radius: 4px;
+                    }
+
+                    @include media(700) {
+                        height: 50px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    &-thumb-active {
+                        opacity: 0.25;
+
+                        @include media(700) {
+                            opacity: 0.75;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// House end
+
+// Stage
+.stage {
+    padding: 64px 0;
+    background: $color-gradient-transparent-2;
+
+    @include media(1200) {
+        padding: 24px 0;
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 72px;
+        margin-bottom: 24px;
+
+        @include media(992) {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+    &-card {
+        &__wrap {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+
+            @include media(992) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include media(700) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+
+        &__head {
+            position: relative;
+            margin-bottom: 16px;
+
+            .main-img {
+                height: 231px;
+                border-radius: 8px;
+                overflow: hidden;
+
+                @include media(1200) {
+                    height: 203px;
+                }
+
+                @include media(992) {
+                    height: 189px;
+                }
+
+                @include media(700) {
+                    height: 176px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .play-btn {
+                @include playBtn();
+            }
+        }
+
+        p {
+            color: $color-grey-dark-1;
+            font-size: 16px;
+        }
+
+        &:hover p {
+            text-decoration: underline;
+        }
+    }
+}
+// Stage end
+
+// Programm
+.program {
+    @include secPadding();
+    padding-bottom: 64px;
+
+    @include media(1200) {
+        padding-bottom: 24px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        margin: 48px 0;
+
+        @include media(992) {
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 24px;
+
+            @include media(992) {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include media(992) {
+                gap: 12px;
+            }
+
+            li {
+                font-size: 20px;
+
+                @include media(992) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 20px;
+        width: 100%;
+
+        @include media(992) {
+            font-size: 18px;
+        }
+    }
+    
+    &-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 48px;
+        width: 100%;
+
+        @include media(1200) {
+            flex-direction: column;
+        }
+
+        @include media(992) {
+            font-size: 24px;
+        }
+        
+        &__wrap {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 48px;
+
+            @include media(992) {
+                gap: 24px;
+            }
+        }
+        
+        &__item{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+
+            @include media(992) {
+                gap: 24px;
+            }
+            
+            h3 {
+                font-size: 32px;
+                font-weight: bold;
+
+                @include media(700) {
+                    padding-bottom: 20px;
+                }
+            }
+            
+            .texts {
+                display: flex;
+                flex-direction: column;
+                gap: 48px;
+                width: 100%;
+
+                @include media(1200) {
+                    gap: 24px;
+                }
+
+                @include media(700) {
+                    gap: 48px;
+                }
+
+                &-item {
+                    width: 100%;
+                }
+
+                h4 {
+                    font-size: 28px;
+                    font-weight: bold;
+                    padding-bottom: 23px;
+                    position: relative;
+                    margin-bottom: 24px;
+
+                    @include media(992) {
+                        font-size: 24px;
+                        padding-bottom: 12px;
+                        margin-bottom: 12px;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background: $color-gradient-grey-1;
+                    }
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                li {
+                    position: relative;
+                    padding-left: 30px;
+                    font-size: 20px;
+
+                    @include media(992) {
+                        font-size: 18px;
+                        padding-left: 16px;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: $color-accent-1;
+
+                        @include media(992) {
+                            width: 6px;
+                            height: 6px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    &-card {
+        background: $color-gradient-transparent-2;
+        border: 1px solid $color-grey-light-2;
+        border-radius: 48px;
+        width: 100%;
+        padding: 48px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
+
+        @include media(1200) {
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: none;
+        }
+
+        @include media(992) {
+            border-radius: 0;
+            width: calc(100% + 48px);
+            margin-left: -24px;
+        }
+
+        .main-img {
+            height: 60px;
+            margin-bottom: 48px;
+
+            @include media(1200) {
+                margin-bottom: 24px;
+            }
+
+            @include media(700) {
+                margin-bottom: 48px;
+            }
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+
+            @include media(992) {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+        }
+
+        h3 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 24px;
+
+            @include media(1200) {
+                margin-bottom: 12px;
+            }
+
+            @include media(992) {
+                font-size: 40px;
+            }
+
+            @include media(700) {
+                margin-bottom: 40px;
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 24px;
+
+            @include media(1200) {
+                justify-content: flex-start;
+            }
+            
+            @include media(992) {
+                gap: 48px;
+            }
+
+            @include media(700) {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            li:not(.line) {
+                width: 100%;
+
+                @include media(1200) {
+                    width: auto;
+                }
+            }
+
+            .line {
+                flex-shrink: 0;
+                width: 2px;
+                background: $color-grey-light-2;
+
+                @include media(992) {
+                    display: none;
+                }
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+            h4 {
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+// Programm end
+
+// Mortgage service
+.mortgage-service {
+    background: $color-grey-light-2;
+    padding: 64px 0;
+
+    @include media(1200) {
+        padding: 24px 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        margin-top: 48px;
+
+        h3 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 24px;
+
+            @include media(992) {
+                font-size: 28px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+                font-size: 20px;
+                position: relative;
+                padding-bottom: 24px;
+
+                @include media(992) {
+                    font-size: 18px;
+                    padding-bottom: 12px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: linear-gradient(to right, rgba(102, 102, 102, 0.25), rgba(102, 102, 102, 0));
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            img {
+                margin-top: 9px;
+                flex-shrink: 0;
+
+                @include media(992) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+// Mortgage service end

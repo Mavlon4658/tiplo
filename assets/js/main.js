@@ -294,4 +294,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
             window.scrollTo(0, 0);
         }
     }
+
+    const houseSwpChild = new Swiper('.house .swp-child .swiper', {
+        slidesPerView: 3,
+        spaceBetween: 0,
+        speed: 800,
+        spaceBetween: 24,
+        breakpoints: {
+            1200: {
+                slidesPerView: 8
+            },
+            992: {
+                slidesPerView: 'auto'
+            },
+            700: {
+                slidesPerView: 4,
+            }
+        },
+    })
+
+    const houseSwpParent = new Swiper('.house .swp-parent .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 800,
+        spaceBetween: 24,
+        thumbs: {
+            swiper: houseSwpChild,
+        },
+        navigation: {
+            nextEl: '.house .swp-parent .btn-swp__next',
+            prevEl: '.house .swp-parent .btn-swp__prev',
+        }
+    })
 });

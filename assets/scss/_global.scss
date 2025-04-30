@@ -13,6 +13,7 @@ $color-accent-3: #C80000;
 $color-gradient: linear-gradient(205.2deg, #8BB93A 12.42%, #6D9B1F 87.58%);
 $color-gradient-grey-1: linear-gradient(to right, #F1F1F1, rgba(255, 255, 255, 0));
 $color-gradient-transparent-1: linear-gradient(to bottom, #FCFCFC, #F3F3F3);
+$color-gradient-transparent-2: linear-gradient(123.65deg, #FCFCFC 10.03%, #F1F1F1 89.97%);
 // Colors end
 
 @mixin media($value) {
@@ -25,5 +26,47 @@ $color-gradient-transparent-1: linear-gradient(to bottom, #FCFCFC, #F3F3F3);
         @media screen and (max-width: $value + 'px') {
             @content;
         }
+    }
+}
+
+@mixin playBtn () {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $color-light;
+    display: flex;
+    align-items: center;
+    padding-left: 21px;
+
+    &:active {
+        background: $color-accent-1;
+
+        svg path {
+            fill: $color-light;
+        }
+    }
+}
+
+@mixin textHover() {
+    transition: .3s ease-in-out all;
+
+    &:hover {
+        color: $color-accent-1;
+    }
+}
+
+@mixin secPadding() {
+    padding: 210px 0 0;
+
+    @include media(1200) {
+        padding: 174px 0 0;
+    }
+
+    @include media(992) {
+        padding: 171px 0 0;
     }
 }
