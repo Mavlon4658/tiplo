@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPLO</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- CSS file -->
+    <link rel="stylesheet" href="./assets/scss/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-container">
+                <div class="header-left">
+                    <a href="/" class="header-logo">
+                        <img src="./assets/images/logo.svg" alt="">
+                    </a>
+                    <button class="header-bars">
+                        <span class="icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span>Меню</span>
+                    </button>
+                    <ul class="header-navs">
+                        <li>
+                            <a href="#">Портфолио</a>
+                        </li>
+                        <li>
+                            <a href="#">Ипотека 6%</a>
+                        </li>
+                        <li>
+                            <a href="#">Видеоблог</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-right">
+                    <a href="tel:+7 (800) 000 00 00" class="phone-link">+7 (800) 000 00 00</a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="./assets/images/vkontact.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 4.56427L18.1493 19.3332C18.1493 19.3332 17.7518 20.3595 16.6565 19.8656L12.6044 16.6714L10.0088 19.1098C10.0088 19.1098 9.8063 19.2718 9.58125 19.1715L9.58371 19.1489L10.1062 14.5574C10.1062 14.5574 17.3904 7.82108 17.6905 7.53558C17.9905 7.25007 17.893 7.18834 17.893 7.18834C17.908 6.84111 17.3529 7.18834 17.3529 7.18834L7.70268 13.4973L7.69196 13.492L3.67854 12.1031C3.67854 12.1031 3.0634 11.8793 3.00339 11.3854C2.94337 10.8916 3.70105 10.6293 3.70105 10.6293L19.6872 4.17845C19.6872 4.17845 21 3.5843 21 4.56427Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3912 4.11224C22.4185 4.38886 23.2296 5.19914 23.5062 6.22729C24.0203 8.10569 23.9999 12.0192 23.9999 12.0192C23.9999 12.0192 23.9999 15.9139 23.5054 17.7923C23.2288 18.8196 22.4185 19.6307 21.3903 19.9073C19.5128 20.4018 11.9999 20.4018 11.9999 20.4018C11.9999 20.4018 4.50753 20.4018 2.60953 19.8878C1.5822 19.6111 0.77111 18.8009 0.49449 17.7727C0 15.9147 0 12.0004 0 12.0004C0 12.0004 0 8.10569 0.49449 6.22729C0.77111 5.19914 1.60097 4.36928 2.60953 4.09266C4.48794 3.59817 11.9999 3.59817 11.9999 3.59817C11.9999 3.59817 19.5128 3.59817 21.3912 4.11224ZM9.6083 15.5982V8.40197L15.8555 12.0005L9.6083 15.5982Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.4837 13.6751H5.82375V10.9649H12.4821C12.8711 10.9649 13.1411 11.0351 13.2777 11.1559C13.4127 11.2784 13.4979 11.5037 13.4979 11.8335V12.8065C13.4979 13.1543 13.4143 13.3796 13.2777 13.502C13.1427 13.6245 12.8711 13.6751 12.4821 13.6751H12.4837ZM12.9402 8.4098H3V20H5.82375V16.2286H11.0277L13.4979 20H16.6607L13.9382 16.2106C14.9427 16.0571 15.3927 15.7404 15.7639 15.2196C16.1352 14.6988 16.3216 13.8645 16.3216 12.751V11.8824C16.3216 11.2229 16.2541 10.7004 16.1352 10.302C16.0162 9.90204 15.8138 9.55429 15.5261 9.24245C15.2223 8.94694 14.8832 8.73796 14.4782 8.59918C14.0716 8.47673 13.5637 8.40816 12.9402 8.40816V8.4098Z" fill="white"/>
+                                    <path d="M18.8304 8.40816C20.0293 8.40816 21 7.42204 21 6.20408C21 4.98612 20.0293 4 18.8304 4C17.6314 4 16.6607 4.98612 16.6607 6.20408C16.6607 7.42204 17.6314 8.40816 18.8304 8.40816Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="header-bars">
+                        <img src="./assets/images/bars.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Nav -->
+        <nav class="nav">
+            <div class="nav-block">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <div class="main-img">
+                                <img src="./assets/images/nav-card.png" alt="">
+                            </div>
+                            <div>
+                                <p>Типло S</p>
+                                <h3>
+                                    70
+                                    <span>км. м.</span>
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-img">
+                                <img src="./assets/images/nav-card.png" alt="">
+                            </div>
+                            <div>
+                                <p>Типло S</p>
+                                <h3>
+                                    70
+                                    <span>км. м.</span>
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-img">
+                                <img src="./assets/images/nav-card.png" alt="">
+                            </div>
+                            <div>
+                                <p>Типло S</p>
+                                <h3>
+                                    70
+                                    <span>км. м.</span>
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="main-img">
+                                <img src="./assets/images/nav-card.png" alt="">
+                            </div>
+                            <div>
+                                <p>Типло S</p>
+                                <h3>
+                                    70
+                                    <span>км. м.</span>
+                                </h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Nav end -->
+
+        <section class="modal menu">
+            <div class="modal-bg"></div>
+            <div class="modal-dialog__wrap">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <ul class="menu-list">
+                            <li class="menu-list__item">
+                                <div>
+                                    <h3>TiPLO Finance</h3>
+                                    <h4>Ипотека 6%</h4>
+                                    <a href="#">
+                                        <span>6 банков-партнёров</span>
+                                        <span class="icon">
+                                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.00038 17.5L8.82022 9L1.00038 0.500005" stroke="white" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <h3>Trade in</h3>
+                                    <a href="#">
+                                        <span>За счёт Вашей недвижимости</span>
+                                        <span class="icon">
+                                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.00038 17.5L8.82022 9L1.00038 0.500005" stroke="white" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-1.png" alt="" class="bg-img">
+                                <h3>О компании</h3>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-2.png" alt="" class="bg-img">
+                                <h3>Услуги</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">Проектирование</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Строительство</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Дизайн интерьера</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Дизайн экстерьера</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-3.png" alt="" class="bg-img">
+                                <h3>Готовые проекты</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">Более 100 типовых решений</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-4.png" alt="" class="bg-img">
+                                <h3>Портфолио</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#">Наши объекты</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-5.png" alt="" class="bg-img">
+                                <h3>Видеоблог</h3>
+                            </li>
+                            <li class="menu-list__item menu-card">
+                                <img src="./assets/images/menu-card-6.png" alt="" class="bg-img">
+                                <h3>Контакты</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modal mobile-menu">
+            <div class="modal-bg"></div>
+            <div class="modal-dialog__wrap">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div>
+                            <a href="/" class="logo">
+                                <img src="./assets/images/logo-green.svg" alt="">
+                            </a>
+                            <button class="close-btn">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 21L1 1M1 21L21 1" stroke="#666666"/>
+                                </svg>
+                            </button>
+                            <ul class="mobile-menu__navs">
+                                <li>
+                                    <a href="#">TiPLO 2.0</a>
+                                </li>
+                                <li>
+                                    <a href="#">Custom</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ипотека 6%</a>
+                                </li>
+                                <li>
+                                    <a href="#">Услуги</a>
+                                </li>
+                                <li>
+                                    <a href="#">Портфолио</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">О компании</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Видеоблог</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Контакты</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a href="tel:+7 (800) 000 00 00" class="phone-link">+7 (800) 000 00 00</a> <br>
+                            <a href="mailto:info@tiplo.ru" class="mail-link">info@tiplo.ru</a>
+                            <ul class="network-link">
+                                <li>
+                                    <a href="#">
+                                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.8931 12C4.0599 12 0.162399 7.49549 0 0H3.42286C3.53529 5.5015 6.05865 7.83183 8.0574 8.31231V0H11.2805V4.74474C13.2543 4.54054 15.3277 2.37838 16.0273 0H19.2503C18.7132 2.93093 16.4646 5.09309 14.8656 5.98198C16.4646 6.7027 19.0256 8.58859 20 12H16.4521C15.6901 9.71772 13.7914 7.95195 11.2805 7.71171V12H10.8931Z" fill="#666666"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 1.09953L16.8326 16.7915C16.8326 16.7915 16.3908 17.8819 15.1739 17.3572L10.6716 13.9634L7.78761 16.5541C7.78761 16.5541 7.56256 16.7263 7.3125 16.6197L7.31524 16.5958L7.89583 11.7172C7.89583 11.7172 15.9893 4.5599 16.3228 4.25655C16.6562 3.9532 16.5478 3.88762 16.5478 3.88762C16.5645 3.51868 15.9477 3.88762 15.9477 3.88762L5.2252 10.5909L5.21329 10.5852L0.753934 9.1095C0.753934 9.1095 0.0704439 8.87174 0.00376201 8.34704C-0.0629199 7.82233 0.778939 7.54358 0.778939 7.54358L18.5413 0.689608C18.5413 0.689608 20 0.0583205 20 1.09953Z" fill="#666666"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> 
+                        <p>© 2008 — 2025, «TiPLO». Все правы защищены.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <!-- Video modal -->
+        <section class="modal video-modal">
+            <div class="modal-bg"></div>
+            <button class="modal-close">
+                <img src="./assets/images/modal-close.svg" alt="">
+            </button>
+            <div class="modal-dialog__wrap">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="video-modal__card">
+                            <img src="./assets/images/video-modal-card.png" alt="" class="video-modal__card-img">
+                            <img src="./assets/images/logo-yellow.svg" alt="" class="logo">
+                            <button class="play-btn">
+                                <svg width="16" height="25" viewBox="0 0 16 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 12.16L-1.04907e-06 24.16L0 0.160033L16 12.16Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-modal__text">
+                            <h2>Презентация Комфорт</h2>
+                            <h3>Одноэтажные дома от 80 м2 до 200 м2</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Video modal end -->
+
+        <!-- Feedback -->
+        <section class="modal feedback-modal">
+            <div class="modal-bg"></div>
+            <div class="modal-dialog__wrap">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <button class="modal-close">
+                            <img src="./assets/images/times-grey.svg" alt="">
+                        </button>
+                        <h2>Обратная связь</h2>
+                        <div class="feedback-modal__form">
+                            <div class="inp-wrap">
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        <label for="">Имя</label>
+                                        <div class="form-inp">
+                                            <input type="text" placeholder="Ваше имя">
+                                            <span>*</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="">Телефон</label>
+                                        <div class="form-inp">
+                                            <input type="tel" placeholder="+7 (000) 000 00 00 ">
+                                            <span>*</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-control">
+                                        <label for="">Почта</label>
+                                        <div class="form-inp">
+                                            <input type="text" placeholder="hello@mail.ru">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="">Модель дома</label>
+                                        <div class="form-inp">
+                                            <input type="text" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-control w-full">
+                                    <label for="">Сообщение</label>
+                                    <div class="form-inp">
+                                        <textarea name="" placeholder="Сообщение" id=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-checkbox__wrap">
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span></span>
+                            </div>
+                            <p>Заполняя данную форму, Вы соглашаетесь с <a href="https://tiplo.ru/privacy" target="_blank">политикой конфиденциальности</a>.</p>
+                        </div>
+                        <div class="feedback-modal__text">Поля, отмеченные * - обязательны для заполнения.</div>
+                        <button class="btn-green disabled">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feedback end -->
+        <!-- Modals end -->
+
+        <main>
+
+            <!-- About -->
+            <section class="about">
+                <div class="container about-container">
+                    <img src="./assets/images/about-bg.png" alt="" class="about-bg">
+                    <h2 class="sec-title">Комфортные дома</h2>
+                    <h1>= ТИПЛО</h1>
+                    <p>Мы уверены: дом — это не просто стены и крыша. Это место силы, уюта и безопасности. Это пространство, где растут дети, строятся мечты и создаются воспоминания на всю жизнь.</p>
+                    <p>Уже более 10 лет мы проектируем и строим тёплые, надёжные и экологичные дома под ключ. Каждый наш проект — это продуманная до мелочей история, в центре которой всегда человек. Мы уважаем своих клиентов, ценим их доверие и верим, что настоящее качество рождается из внимания к деталям и искреннего желания делать хорошо.</p>
+                </div>
+            </section>
+            <!-- About end -->
+
+            <!-- Our houses -->
+            <section class="our-house">
+                <img src="./assets/images/our-house-bg.png" alt="" class="our-house__bg">
+                <div class="container our-house__container">
+                    <h2 class="sec-title">Наши дома</h2>
+                    <p>Не просто квадратные метры...</p>
+                    <div class="title">ТИПЛО - это</div>
+                    <ul>
+                        <li>Качество</li>
+                        <li>Проверенные материалы</li>
+                        <li>Cовременная архитектура</li>
+                        <li>Энергоэффективные <br> технологии</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Our houses end -->
+
+            <!-- Our house card -->
+            <section class="our-house__card">
+                <img src="./assets/images/our-house-card.png" alt="" class="main-img">
+                <img src="./assets/images/big-logo.svg" alt="" class="logo">
+            </section>
+            <!-- Our house card end -->
+
+            <!-- Mission -->
+            <section class="mission">
+                <div class="container mission-container">
+                    <h2 class="sec-title">Наша миссия</h2>
+                    <h3><span>Проста и важна:</span> проектировать и строить одноэтажные дома, доступные для комфортной и безопасной жизни</h3>
+                    <p>Каждый построенный нами дом — это шаг к устойчивому развитию и энергоэффективности.</p>
+                </div>
+            </section>
+            <!-- Mission end -->
+
+            <!-- Service -->
+            <section class="service">
+                <div class="container">
+                    <h2 class="sec-title">Услуги</h2>
+                    <ul class="service-card__wrap">
+                        <li class="service-card">
+                            <a href="#">
+                                <img src="./assets/images/service-card-1.png" alt="">
+                                <span>Проектирование</span>
+                            </a>
+                        </li>
+                        <li class="service-card">
+                            <a href="#">
+                                <img src="./assets/images/service-card-2.png" alt="">
+                                <span>Строительство</span>
+                            </a>
+                        </li>
+                        <li class="service-card">
+                            <a href="#">
+                                <img src="./assets/images/service-card-3.png" alt="">
+                                <span>Дизайн интерьера</span>
+                            </a>
+                        </li>
+                        <li class="service-card">
+                            <a href="#">
+                                <img src="./assets/images/service-card-4.png" alt="">
+                                <span>Ландшафтный дизайн</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Service end -->
+
+            <!-- Trust -->
+            <section class="trust">
+                <div class="container">
+                    <h2 class="sec-title">Нам доверяют</h2>
+                    <div class="trust-swp">
+                        <div class="swp-pagination"></div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="trust-card">
+                                        <!-- <img src="" alt="" class="main-img"> -->
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trust-card">
+                                        <!-- <img src="" alt="" class="main-img"> -->
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trust-card">
+                                        <!-- <img src="" alt="" class="main-img"> -->
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trust-card">
+                                        <!-- <img src="" alt="" class="main-img"> -->
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="trust-card">
+                                        <!-- <img src="" alt="" class="main-img"> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Trust end -->
+
+            <!-- Contact -->
+            <section class="contact">
+                <div class="contact-top">
+                    <div class="bg-img">
+                        <img src="./assets/images/contact-top-bg.png" alt="">
+                    </div>
+                    <div class="container">
+                        <h2 class="sec-title">Мы свяжем с вами!</h2>
+                        <div class="contact-top__form">
+                            <input type="text" placeholder="Ваше имя" class="form-inp">
+                            <input type="tel" placeholder="+7 (800) 000 000 00" name="" id="" class="form-inp">
+                            <p>Заполняя данную форму, Вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+                            <button class="btn-light-outline">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact end -->
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-head">
+                    <div class="footer-logo__wrap">
+                        <a href="/" class="footer-logo">
+                            <img src="./assets/images/logo.svg" alt="">
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 5.44903L18.1493 20.218C18.1493 20.218 17.7518 21.2442 16.6565 20.7504L12.6044 17.5562L10.0088 19.9945C10.0088 19.9945 9.8063 20.1566 9.58125 20.0563L9.58371 20.0337L10.1062 15.4421C10.1062 15.4421 17.3904 8.70584 17.6905 8.42034C17.9905 8.13484 17.893 8.07311 17.893 8.07311C17.908 7.72588 17.3529 8.07311 17.3529 8.07311L7.70268 14.3821L7.69196 14.3768L3.67854 12.9878C3.67854 12.9878 3.0634 12.7641 3.00339 12.2702C2.94337 11.7764 3.70105 11.514 3.70105 11.514L19.6872 5.06322C19.6872 5.06322 21 4.46907 21 5.44903Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.4837 14.5599H5.82375V11.8497H12.4821C12.8711 11.8497 13.1411 11.9199 13.2777 12.0407C13.4127 12.1631 13.4979 12.3884 13.4979 12.7182V13.6913C13.4979 14.0391 13.4143 14.2644 13.2777 14.3868C13.1427 14.5093 12.8711 14.5599 12.4821 14.5599H12.4837ZM12.9402 9.29456H3V20.8848H5.82375V17.1133H11.0277L13.4979 20.8848H16.6607L13.9382 17.0954C14.9427 16.9419 15.3927 16.6252 15.7639 16.1044C16.1352 15.5835 16.3216 14.7493 16.3216 13.6358V12.7672C16.3216 12.1076 16.2541 11.5852 16.1352 11.1868C16.0162 10.7868 15.8138 10.4391 15.5261 10.1272C15.2223 9.8317 14.8832 9.62272 14.4782 9.48395C14.0716 9.3615 13.5637 9.29293 12.9402 9.29293V9.29456Z" fill="white"/>
+                                        <path d="M18.8304 9.29293C20.0293 9.29293 21 8.30681 21 7.08885C21 5.87089 20.0293 4.88477 18.8304 4.88477C17.6314 4.88477 16.6607 5.87089 16.6607 7.08885C16.6607 8.30681 17.6314 9.29293 18.8304 9.29293Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/images/vkontact.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-navs">
+                        <ul class="footer-navs__item">
+                            <li>
+                                <a href="#">Tiplo 2.0</a>
+                            </li>
+                            <li>
+                                <a href="#">Tiplo flex</a>
+                            </li>
+                            <li>
+                                <a href="#">Custom</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-navs__item">
+                            <li>
+                                <a href="#">Ипотека 6%</a>
+                            </li>
+                            <li>
+                                <a href="#">Trade in</a>
+                            </li>
+                            <li>
+                                <a href="#">Услуги</a>
+                            </li>
+                            <li>
+                                <a href="#">Портфолио</a>
+                            </li>
+                            <li>
+                                <a href="#">О компании</a>
+                            </li>
+                        </ul>
+                        <ul class="footer-navs__item">
+                            <li>
+                                <a href="#">Готовые проекты</a>
+                            </li>
+                            <li>
+                                <a href="#">Строительство под ключ</a>
+                            </li>
+                            <li>
+                                <a href="#">Видеоблог</a>
+                            </li>
+                            <li>
+                                <a href="#">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="footer-navs__item">
+                            <p>Ленинградская область, <br> ДНП Усадьба Можайское, 1</p>
+                            <p>Пн - Пт: 09:00 - 18:00</p>
+                            <a href="tel:+7 (800) 000 00 00">+7 (800) 000 00 00 </a>
+                            <a href="mailto:info@tiplo.ru" target="_blank">info@tiplo.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-body">
+                    <div class="footer-accordion">
+                        <button class="footer-accordion__btn">
+                            <span>ИП ПЕТРУНИНЦЕВ РОМАН ВАЛЕРЬЕВИЧ</span>
+                            <img src="./assets/images/arrow-icon.svg" alt="">
+                        </button>
+                        <div class="footer-accordion__body">
+                            <ul>
+                                <li>ИНН: 472002802658</li>
+                                <li>ОГРНИП: 304472026100029</li>
+                                <li>БАНК: СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО Сбербанк</li>
+                                <li>Расчетный счет: 40802810255000067004</li>
+                                <li>Корр. Счет: 30101810500000000653</li>
+                                <li>БИК: 044030653</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-accordion">
+                        <button class="footer-accordion__btn">
+                            <span>ООО "ТИПЛО"</span>
+                            <img src="./assets/images/arrow-icon.svg" alt="">
+                        </button>
+                        <div class="footer-accordion__body">
+                            <ul>
+                                <li>ИНН: 7819046522   КПП: 781901001</li>
+                                <li>ОГРНИП: 1227800102639</li>
+                                <li>БАНК: АО "Тинькофф Банк"</li>
+                                <li>Расчетный счет: 40702810910001141957</li>
+                                <li>Корр. Счет: 30101810145250000974</li>
+                                <li>БИК: 044525974</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-foot">
+                    <p class="copy-text">© 2008 — 2025, «TiPLO». Надёжные дома из газобетона на железобетонной плите.</p>
+                    <div class="text-wrap">
+                        <p>Все авторские права защищены. Частичное или полное копирование графической и/или текстовой информации этого сайта без письменного  разрешения преследуется по закону.</p>
+                        <a href="#">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+        <button class="scroll-btn">
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 9.00003L9.99999 1.16296L19 9.00003" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- IMask JS file -->
+    <script src="./assets/js/iMask.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JS file -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

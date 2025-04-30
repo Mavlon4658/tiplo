@@ -326,4 +326,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             prevEl: '.house .swp-parent .btn-swp__prev',
         }
     })
+
+    const trustSwp = new Swiper('.trust .swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        pagination: {
+            el: ".trust .swp-pagination",
+            type: "progressbar",
+        },
+    })
 });
