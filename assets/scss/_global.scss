@@ -70,3 +70,15 @@ $color-gradient-transparent-2: linear-gradient(123.65deg, #FCFCFC 10.03%, #F1F1F
         padding: 171px 0 0;
     }
 }
+
+@mixin swpPagination() {
+    z-index: 2;
+    top: auto;
+    position: relative;
+    height: 2px;
+    background: $color-grey-light-2;
+
+    span {
+        background: $color-accent-1;
+    }
+}

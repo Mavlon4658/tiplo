@@ -335,4 +335,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             type: "progressbar",
         },
     })
+
+    const serviceHomeSwp = new Swiper('.service-home__swp .swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        pagination: {
+            el: ".service-home__swp .swp-pagination",
+            type: "progressbar",
+        },
+    })
 });
