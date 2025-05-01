@@ -6043,3 +6043,326 @@ button, input, textarea, li, div {
     }
 }
 // Design end
+
+// Contact block
+.contact-block {
+    @include secPadding();
+    padding-bottom: 64px;
+
+    @include media(1200) {
+        padding-bottom: 24px;
+    }
+
+    &__swp {
+        position: relative;
+        margin: 24px 0 48px;
+
+        .swp-pagination {
+            @include swpPagination();
+            margin-bottom: 24px;
+
+            @include media(-700) {
+                display: block;
+                background: transparent;
+
+                span {
+                    background: $color-gradient-grey-1;
+                }
+            }
+        }
+
+        .swiper {
+            overflow: visible;
+
+            &-slide {
+                &:nth-child(1) {
+                    width: 225px;
+                }
+                &:nth-child(2) {
+                    width: 98px;
+                }
+                &:nth-child(3) {
+                    width: 115px;
+                }
+
+                a {
+                    font-size: 24px;
+                    font-weight: bold;
+                    @include textHover();
+
+                    &.active {
+                        color: $color-accent-1;
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        overflow-x: scroll;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        padding: 0 24px;
+
+        @include media(992) {
+            gap: 24px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        li {
+            flex-shrink: 0;
+        }
+
+        a {
+            white-space: nowrap;
+            @include textHover();
+        }
+
+        a, span {
+            font-size: 32px;
+            font-weight: bold;
+
+            @include media(1200) {
+                font-size: 28px;
+            }
+
+            @include media(992) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+// Contact block end
+
+// Contact map
+.contact-map {
+    position: relative;
+    padding: 64px 0;
+
+    @include media(1200) {
+        padding: 0;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100);
+
+        @include media(992) {
+            position: static;
+            height: 420px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__content {
+        background: $color-light;
+        position: relative;
+        z-index: 2;
+        max-width: 410px;
+        border-radius: 12px;
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include media(1200) {
+            max-width: 394px;
+            margin-left: -24px;
+            border-radius: 0;
+            background: linear-gradient(to right, #F1F1F1, #FFFFFF);
+            padding: 24px;
+        }
+
+        @include media(992) {
+            max-width: calc(100% + 48px);
+            width: calc(100% + 48px);
+            background: linear-gradient(to bottom, #FCFCFC, #FFFFFF);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 23px;
+            color: $color-grey-light-1;
+
+            @include media(1200) {
+                margin-bottom: 12px;
+            }
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: $color-accent-1;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        h4 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 12px;
+
+            @include media(1200) {
+                margin-bottom: 24px;
+                font-size: 16px;
+            }
+
+            @include media(992) {
+                margin-bottom: 12px;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg path,
+                svg rect {
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover svg {
+                    path, rect {
+                        stroke: $color-accent-1;
+                    }
+                }
+            }
+        }
+
+        p, a {
+            font-size: 20px;
+        }
+
+        a {
+            @include textHover();
+        }
+
+        .networks {
+            align-items: center;
+            flex-direction: row;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg path {
+                    transition: .3s ease-in-out all;
+                }
+
+                &:hover svg path {
+                    fill: $color-accent-1;
+                }
+            }
+        }
+    }
+}
+// Contact map end
+
+// Way
+.way {
+    padding: 64px 0;
+
+    @include media(1200) {
+        padding: 24px 0;
+    }
+
+    &-swp {
+        margin: 24px 0 48px;
+
+        @include media(992) {
+            margin: 24px 0;
+        }
+
+        .swp-pagination {
+            @include swpPagination();
+            margin-bottom: 24px;
+
+            @include media(-700) {
+                display: block;
+                background: transparent;
+
+                span {
+                    background: $color-gradient-grey-1;
+                }
+            }
+        }
+
+        .swiper {
+            overflow: visible;
+
+            &-slide {
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                user-select: none;
+                @include textHover();
+
+                &.active {
+                    color: $color-accent-1;
+                }
+
+                &:nth-child(1) {
+                    width: 162px;
+                }
+
+                &:nth-child(2) {
+                    width: 347px;
+                }
+            }
+        }
+    }
+
+    .tab-body {
+        display: none;
+        flex-direction: column;
+        gap: 24px;
+
+        &.active {
+            display: flex;
+        }
+
+        li {
+            font-size: 20px;
+            padding-bottom: 12px;
+            position: relative;
+
+            @include media(992) {
+                font-size: 18px;
+            }
+
+            &:not(:last-child)::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(to right, rgba(102, 102, 102, 0.25), rgba(102, 102, 102, 0));
+            }
+        }
+    }
+}
+// Way end

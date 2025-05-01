@@ -344,4 +344,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
             type: "progressbar",
         },
     })
+    
+    const contactSwp = new Swiper('.contact-block__swp .swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        pagination: {
+            el: ".contact-block__swp .swp-pagination",
+            type: "progressbar",
+        },
+    })
+
+    const waySwp = new Swiper('.way-swp .swiper', {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        pagination: {
+            el: ".way-swp .swp-pagination",
+            type: "progressbar",
+        },
+    })
+
+    const wayTabBtn = document.querySelectorAll('.way-swp .swiper-slide');
+    const wayTabItem = document.querySelectorAll('.way .tab-body');
+
+    if (wayTabBtn.length) {
+        wayTabBtn.forEach((btn, btnID) => {
+            btn.onclick = () => {
+                wayTabItem.forEach((el, elID) => {
+                    if (elID == btnID) {
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+                wayTabBtn.forEach((el, elID) => {
+                    if (elID == btnID) {
+                        el.classList.add('active');
+                    } else {
+                        el.classList.remove('active');
+                    }
+                })
+            }
+        })
+    }
 });
